@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Health Services - CampusConnect</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .health-section {
+            margin-bottom: 30px;
+        }
+        
+        .health-intro {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .service-card {
+            flex: 1 1 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h4 {
+            color: #0056b3;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .hours-table th, .hours-table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .hours-table th {
+            background-color: #e3f2fd;
+            color: #0056b3;
+        }
+        
+        .insurance-section {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .appointment-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .staff-profiles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .staff-card {
+            flex: 1 1 250px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .staff-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #e3f2fd;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #0056b3;
+        }
+        
+        .staff-info h4 {
+            color: #0056b3;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .staff-title {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .emergency-box {
+            background-color: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .emergency-box h3 {
+            color: #d32f2f;
+            margin-top: 0;
+        }
+        
+        .faq-section {
+            margin-top: 30px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .faq-item h4 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Campus Health Services</h1>
+            <p><a href="../student.html">← Back to Student Dashboard</a></p>
+        </header>
+        
+        <main>
+            <section class="health-section">
+                <div class="health-intro">
+                    <h2>Your Health, Our Priority</h2>
+                    <p>The Campus Health Services center provides comprehensive healthcare to all enrolled students. Our team of healthcare professionals is dedicated to helping you maintain your physical health and well-being throughout your academic journey.</p>
+                    <p>We offer a wide range of medical services, from routine check-ups and immunizations to treatment for illnesses and injuries. Our goal is to provide accessible, high-quality healthcare that meets the unique needs of our student population.</p>
+                </div>
+                
+                <div class="emergency-box">
+                    <h3>Medical Emergency Information</h3>
+                    <p>If you are experiencing a medical emergency, please call 911 or go to the nearest emergency room immediately.</p>
+                    <p><strong>Campus Emergency Services:</strong> (555) 123-9911</p>
+                    <p><strong>After-Hours Nurse Line:</strong> (555) 123-4567, option 2</p>
+                    <p><strong>Nearest Hospital:</strong> University Medical Center, 500 Hospital Drive (2 miles from campus)</p>
+                </div>
+                
+                <h3>Our Services</h3>
+                <div class="services-container">
+                    <div class="service-card">
+                        <h4>Primary Care</h4>
+                        <ul>
+                            <li>Diagnosis and treatment of illnesses and injuries</li>
+                            <li>Physical examinations</li>
+                            <li>Management of chronic conditions</li>
+                            <li>Preventive care and health education</li>
+                            <li>Referrals to specialists when needed</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Women's Health</h4>
+                        <ul>
+                            <li>Annual gynecological exams</li>
+                            <li>Birth control consultations and prescriptions</li>
+                            <li>Pregnancy testing</li>
+                            <li>STI testing and treatment</li>
+                            <li>Health education and counseling</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Immunizations</h4>
+                        <ul>
+                            <li>Required immunizations for enrollment</li>
+                            <li>Seasonal flu shots</li>
+                            <li>Travel vaccines</li>
+                            <li>COVID-19 vaccines and boosters</li>
+                            <li>Immunization records and compliance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Laboratory Services</h4>
+                        <ul>
+                            <li>Blood tests</li>
+                            <li>Urinalysis</li>
+                            <li>STI testing</li>
+                            <li>Strep throat testing</li>
+                            <li>COVID-19 testing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Allergy & Asthma Care</h4>
+                        <ul>
+                            <li>Allergy testing and treatment</li>
+                            <li>Allergy shot administration</li>
+                            <li>Asthma management</li>
+                            <li>Inhaler technique education</li>
+                            <li>Seasonal allergy support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Health Education</h4>
+                        <ul>
+                            <li>Nutrition counseling</li>
+                            <li>Sexual health education</li>
+                            <li>Alcohol and substance use information</li>
+                            <li>Stress management techniques</li>
+                            <li>Wellness workshops and events</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Hours of Operation</h3>
+                <table class="hours-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Hours</th>
+                            <th>Services Available</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday - Friday</td>
+                            <td>8:00 AM - 5:00 PM</td>
+                            <td>All services</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>10:00 AM - 2:00 PM</td>
+                            <td>Urgent care only</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Closed</td>
+                            <td>After-hours nurse line available</td>
+                        </tr>
+                        <tr>
+                            <td>Holidays</td>
+                            <td>Closed</td>
+                            <td>After-hours nurse line available</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="appointment-section">
+                    <h3>Making an Appointment</h3>
+                    <p>We offer several ways to schedule an appointment with Campus Health Services:</p>
+                    <ul>
+                        <li><strong>Online:</strong> Schedule through the Student Health Portal at <a href="#">health.campusconnect.edu</a></li>
+                        <li><strong>Phone:</strong> Call (555) 123-4567 during business hours</li>
+                        <li><strong>In-Person:</strong> Visit our front desk during business hours</li>
+                        <li><strong>App:</strong> Download the CampusHealth mobile app</li>
+                    </ul>
+                    
+                    <h4>Same-Day Appointments</h4>
+                    <p>A limited number of same-day appointments are available for urgent concerns. Please call early in the morning (starting at 8:00 AM) to schedule a same-day appointment.</p>
+                    
+                    <h4>Walk-In Services</h4>
+                    <p>The following services are available on a walk-in basis:</p>
+                    <ul>
+                        <li>Immunizations (Monday-Friday, 9:00 AM - 4:00 PM)</li>
+                        <li>COVID-19 testing (Monday-Friday, 8:30 AM - 4:30 PM)</li>
+                        <li>Pregnancy testing</li>
+                        <li>Blood pressure checks</li>
+                    </ul>
+                </div>
+                
+                <div class="insurance-section">
+                    <h3>Insurance & Costs</h3>
+                    <p>Campus Health Services accepts most major insurance plans, including the Student Health Insurance Plan (SHIP).</p>
+                    
+                    <h4>Accepted Insurance Plans</h4>
+                    <ul>
+                        <li>Student Health Insurance Plan (SHIP)</li>
+                        <li>Blue Cross Blue Shield</li>
+                        <li>Aetna</li>
+                        <li>Cigna</li>
+                        <li>United Healthcare</li>
+                        <li>Medicare/Medicaid</li>
+                    </ul>
+                    
+                    <h4>Costs Without Insurance</h4>
+                    <p>If you don't have insurance, you may still use our services. The Student Health Fee (included in your tuition) covers:</p>
+                    <ul>
+                        <li>Unlimited office visits</li>
+                        <li>Basic health education</li>
+                        <li>Mental health screenings</li>
+                    </ul>
+                    
+                    <p>Additional services such as lab tests, procedures, and medications will incur charges. We offer these services at reduced rates for students.</p>
+                    
+                    <h4>Payment Options</h4>
+                    <p>We accept credit cards, debit cards, cash, checks, and can bill charges to your student account.</p>
+                </div>
+                
+                <h3>Meet Our Healthcare Team</h3>
+                <div class="staff-profiles">
+                    <div class="staff-card">
+                        <div class="staff-photo">DR</div>
+                        <div class="staff-info">
+                            <h4>Dr. Robert Chen, MD</h4>
+                            <p class="staff-title">Medical Director</p>
+                            <p>Dr. Chen is board-certified in Family Medicine with over 15 years of experience in college health. He oversees all medical services at the health center.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="staff-card">
+                        <div class="staff-photo">LJ</div>
+                        <div class="staff-info">
+                            <h4>Lisa Johnson, NP</h4>
+                            <p class="staff-title">Nurse Practitioner</p>
+                            <p>Lisa specializes in women's health and primary care. She has been working with college students for over 10 years.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="staff-card">
+                        <div class="staff-photo">MT</div>
+                        <div class="staff-info">
+                            <h4>Mark Thompson, PA-C</h4>
+                            <p class="staff-title">Physician Assistant</p>
+                            <p>Mark focuses on sports medicine and acute care. He works closely with student athletes and the campus recreation department.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="staff-card">
+                        <div class="staff-photo">SG</div>
+                        <div class="staff-info">
+                            <h4>Sarah Garcia, RN</h4>
+                            <p class="staff-title">Head Nurse</p>
+                            <p>Sarah coordinates nursing services and oversees immunization clinics and health education programs.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    
+                    <div class="faq-item">
+                        <h4>Do I need to make an appointment or can I walk in?</h4>
+                        <p>Most services require an appointment to minimize wait times. However, certain services like immunizations and COVID-19 testing are available on a walk-in basis during designated hours.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Is my visit confidential?</h4>
+                        <p>Yes, all visits to Campus Health Services are confidential. Your medical information is protected by law (HIPAA) and will not be shared without your permission, including with parents or university staff.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>What should I bring to my appointment?</h4>
+                        <p>Please bring your student ID, insurance card (if applicable), a list of current medications, and any relevant medical records or information about your health concern.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Can I get a note for my professor if I'm sick?</h4>
+                        <p>Yes, we can provide documentation of your visit to Campus Health Services. However, it is ultimately up to your professor to determine their attendance policy and whether to accept medical documentation.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Do you provide prescription refills?</h4>
+                        <p>Yes, we can refill prescriptions that were originally prescribed by our providers. For prescriptions from outside providers, we may need to schedule an appointment first to establish care.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>What if I need to see a specialist?</h4>
+                        <p>Our providers can refer you to specialists in the community if needed. We have established relationships with many local specialists who work with student schedules and insurance.</p>
+                    </div>
+                </div>
+                
+                <h3>Health Resources</h3>
+                <ul>
+                    <li><strong>Student Health Portal:</strong> <a href="#">health.campusconnect.edu</a> - Access your health records, schedule appointments, and message your provider</li>
+                    <li><strong>Health Education Library:</strong> Visit our online resource center for health information specifically for college students</li>
+                    <li><strong>Wellness Workshops:</strong> Check our calendar for upcoming health education events</li>
+                    <li><strong>Peer Health Educators:</strong> Student volunteers who provide health information and resources to fellow students</li>
+                </ul>
+                
+                <h3>Contact Information</h3>
+                <p><strong>Location:</strong> Student Health Center, 123 Campus Drive<br>
+                <strong>Phone:</strong> (555) 123-4567<br>
+                <strong>Email:</strong> health@campusconnect.edu<br>
+                <strong>After-Hours Nurse Line:</strong> (555) 123-4567, option 2</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 CampusConnect. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

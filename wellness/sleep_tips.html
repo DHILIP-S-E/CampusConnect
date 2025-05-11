@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Improvement Tips - CampusConnect</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .sleep-section {
+            margin-bottom: 30px;
+        }
+        
+        .sleep-intro {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .sleep-facts {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .facts-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .fact-card {
+            flex: 1 1 200px;
+            background-color: #fff;
+            border: 1px solid #90caf9;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fact-card h4 {
+            color: #0056b3;
+            margin-top: 0;
+            border-bottom: 1px solid #e3f2fd;
+            padding-bottom: 10px;
+        }
+        
+        .tips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .tip-card {
+            flex: 1 1 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tip-card h4 {
+            color: #0056b3;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .tip-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .sleep-schedule {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .schedule-table th, .schedule-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .schedule-table th {
+            background-color: #e3f2fd;
+            color: #0056b3;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .sleep-tracker {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .tracker-form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            flex: 1 1 200px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+        }
+        
+        .resources-section {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .resources-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .resources-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .resources-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        
+        .sleep-myths {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .myth-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .myth-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .myth-item h4 {
+            color: #d32f2f;
+            margin-bottom: 5px;
+        }
+        
+        .myth-item .reality {
+            color: #2e7d32;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sleep Improvement Tips</h1>
+            <p><a href="../student.html">← Back to Student Dashboard</a></p>
+        </header>
+        
+        <main>
+            <section class="sleep-section">
+                <div class="sleep-intro">
+                    <h2>The Importance of Sleep for Students</h2>
+                    <p>Quality sleep is essential for academic success, mental health, and overall well-being. Unfortunately, college students are among the most sleep-deprived populations, with studies showing that 70-80% of students get less than the recommended amount of sleep.</p>
+                    <p>Poor sleep can affect your memory, concentration, mood, immune system, and even your grades. The good news is that by implementing some simple strategies, you can improve both the quality and quantity of your sleep, leading to better academic performance and a healthier college experience.</p>
+                </div>
+                
+                <div class="sleep-facts">
+                    <h3>Sleep and Academic Performance</h3>
+                    <p>Research has consistently shown a strong connection between sleep and academic success:</p>
+                    
+                    <div class="facts-container">
+                        <div class="fact-card">
+                            <h4>Memory Consolidation</h4>
+                            <p>During sleep, your brain processes and consolidates information learned during the day, strengthening memory and improving recall.</p>
+                        </div>
+                        
+                        <div class="fact-card">
+                            <h4>Problem-Solving</h4>
+                            <p>REM sleep enhances creative problem-solving abilities and helps your brain make connections between seemingly unrelated concepts.</p>
+                        </div>
+                        
+                        <div class="fact-card">
+                            <h4>Focus and Attention</h4>
+                            <p>Well-rested students can focus for longer periods and are better able to pay attention during lectures and study sessions.</p>
+                        </div>
+                        
+                        <div class="fact-card">
+                            <h4>GPA Correlation</h4>
+                            <p>Studies show that students who maintain regular sleep schedules have higher GPAs than those with irregular sleep patterns.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Top 10 Sleep Improvement Tips for Students</h3>
+                
+                <div class="tips-container">
+                    <div class="tip-card">
+                        <h4><span class="tip-number">1</span> Stick to a Consistent Schedule</h4>
+                        <p>Go to bed and wake up at the same time every day, even on weekends. This helps regulate your body's internal clock and can improve the quality of your sleep.</p>
+                        <p><strong>Try this:</strong> Set alarms for both bedtime and wake-up time until the schedule becomes natural.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">2</span> Create a Sleep-Friendly Environment</h4>
+                        <p>Make your bedroom conducive to sleep: dark, quiet, and cool (around 65°F or 18°C). Use earplugs, eye masks, or white noise machines if needed.</p>
+                        <p><strong>Try this:</strong> Invest in blackout curtains or a comfortable eye mask if your room gets too much light.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">3</span> Limit Screen Time Before Bed</h4>
+                        <p>The blue light emitted by phones, tablets, and computers can interfere with your body's production of melatonin, the sleep hormone.</p>
+                        <p><strong>Try this:</strong> Stop using electronic devices at least 30-60 minutes before bedtime, or use blue light filters.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">4</span> Watch Your Caffeine Intake</h4>
+                        <p>Caffeine can stay in your system for 6+ hours. Avoid coffee, tea, energy drinks, and chocolate in the afternoon and evening.</p>
+                        <p><strong>Try this:</strong> Switch to caffeine-free herbal tea after 2:00 PM.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">5</span> Develop a Relaxing Bedtime Routine</h4>
+                        <p>Signal to your body that it's time to wind down with calming activities like reading, gentle stretching, or meditation.</p>
+                        <p><strong>Try this:</strong> Create a 20-minute pre-sleep routine that you follow consistently every night.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">6</span> Exercise Regularly (But Not Too Late)</h4>
+                        <p>Regular physical activity can help you fall asleep faster and enjoy deeper sleep, but exercising too close to bedtime can be stimulating.</p>
+                        <p><strong>Try this:</strong> Aim to finish moderate to vigorous exercise at least 3 hours before bedtime.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">7</span> Manage Stress and Worry</h4>
+                        <p>Stress, anxiety, and racing thoughts are common sleep disruptors for students, especially during exam periods.</p>
+                        <p><strong>Try this:</strong> Keep a "worry journal" next to your bed to jot down concerns or to-do items that might keep you awake.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">8</span> Be Smart About Napping</h4>
+                        <p>Short naps (20-30 minutes) can boost alertness and performance, but long or late-day naps can interfere with nighttime sleep.</p>
+                        <p><strong>Try this:</strong> If you need to nap, do it before 3:00 PM and keep it under 30 minutes.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">9</span> Watch What You Eat and Drink</h4>
+                        <p>Heavy meals, alcohol, and excessive fluids before bed can disrupt sleep. Alcohol may help you fall asleep initially but disrupts sleep quality.</p>
+                        <p><strong>Try this:</strong> Finish eating 2-3 hours before bedtime and limit liquids in the hour before sleep.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h4><span class="tip-number">10</span> Use Your Bed Only for Sleep</h4>
+                        <p>Train your brain to associate your bed with sleep, not studying, watching TV, or scrolling through social media.</p>
+                        <p><strong>Try this:</strong> If you can't fall asleep after 20 minutes, get up and do something relaxing until you feel sleepy.</p>
+                    </div>
+                </div>
+                
+                <div class="sleep-schedule">
+                    <h3>Sample Sleep Schedule for Students</h3>
+                    <p>Here's an example of a healthy sleep schedule that allows for 7-9 hours of sleep while accommodating typical student activities:</p>
+                    
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Activity</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7:00 AM</td>
+                                <td>Wake up</td>
+                                <td>Try to wake up at the same time every day, even on weekends</td>
+                            </tr>
+                            <tr>
+                                <td>7:00 - 8:00 AM</td>
+                                <td>Morning routine</td>
+                                <td>Exposure to natural light helps regulate your circadian rhythm</td>
+                            </tr>
+                            <tr>
+                                <td>2:00 PM</td>
+                                <td>Last caffeine of the day</td>
+                                <td>Cut off caffeine at least 6 hours before bedtime</td>
+                            </tr>
+                            <tr>
+                                <td>5:00 PM</td>
+                                <td>Exercise (if applicable)</td>
+                                <td>Complete moderate to vigorous exercise by this time</td>
+                            </tr>
+                            <tr>
+                                <td>7:00 PM</td>
+                                <td>Dinner</td>
+                                <td>Aim to finish eating 2-3 hours before bedtime</td>
+                            </tr>
+                            <tr>
+                                <td>9:00 PM</td>
+                                <td>Begin winding down</td>
+                                <td>Reduce screen time, dim lights, and start relaxing activities</td>
+                            </tr>
+                            <tr>
+                                <td>10:00 PM</td>
+                                <td>Bedtime routine</td>
+                                <td>Brush teeth, change into pajamas, read a book, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>10:30 PM</td>
+                                <td>Lights out</td>
+                                <td>Aim for 7-9 hours of sleep</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p><strong>Note:</strong> This schedule may need to be adjusted based on your class schedule, work commitments, and personal preferences. The key is consistency.</p>
+                </div>
+                
+                <div class="sleep-myths">
+                    <h3>Common Sleep Myths Debunked</h3>
+                    
+                    <div class="myth-item">
+                        <h4>Myth: You can "catch up" on sleep on the weekends</h4>
+                        <p>Many students believe they can make up for lost sleep during the week by sleeping in on weekends.</p>
+                        <p class="reality">Reality: While extra sleep can help reduce sleep debt, it doesn't fully reverse the effects of chronic sleep deprivation. Consistent sleep patterns are more beneficial than the "catch up" approach.</p>
+                    </div>
+                    
+                    <div class="myth-item">
+                        <h4>Myth: Pulling an all-nighter is effective for exam preparation</h4>
+                        <p>It's a common practice to stay up all night studying before an exam.</p>
+                        <p class="reality">Reality: Sleep deprivation impairs memory consolidation, problem-solving abilities, and concentration. You're better off studying consistently and getting a good night's sleep before an exam.</p>
+                    </div>
+                    
+                    <div class="myth-item">
+                        <h4>Myth: Everyone needs exactly 8 hours of sleep</h4>
+                        <p>The "8 hours rule" is often cited as the universal sleep requirement.</p>
+                        <p class="reality">Reality: Sleep needs vary by individual. Most adults need 7-9 hours, but some may function well with slightly less or need more. Pay attention to how you feel to determine your optimal sleep duration.</p>
+                    </div>
+                    
+                    <div class="myth-item">
+                        <h4>Myth: Alcohol helps you sleep better</h4>
+                        <p>Some students use alcohol as a sleep aid.</p>
+                        <p class="reality">Reality: While alcohol may help you fall asleep faster, it disrupts REM sleep and leads to poorer sleep quality overall. You'll likely wake up feeling less rested.</p>
+                    </div>
+                </div>
+                
+                <div class="sleep-tracker">
+                    <h3>Track Your Sleep</h3>
+                    <p>Monitoring your sleep patterns can help you identify issues and measure improvements. Use this simple sleep diary for at least two weeks to gain insights into your sleep habits.</p>
+                    
+                    <div class="tracker-form">
+                        <h4>Sleep Diary</h4>
+                        <form id="sleep-diary-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sleep-date">Date</label>
+                                    <input type="date" id="sleep-date" name="sleepDate">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bedtime">Time you went to bed</label>
+                                    <input type="time" id="bedtime" name="bedtime">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="sleep-time">Estimated time you fell asleep</label>
+                                    <input type="time" id="sleep-time" name="sleepTime">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="wake-time">Time you woke up</label>
+                                    <input type="time" id="wake-time" name="wakeTime">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="sleep-quality">Sleep Quality</label>
+                                    <select id="sleep-quality" name="sleepQuality">
+                                        <option value="">Select</option>
+                                        <option value="1">1 - Very Poor</option>
+                                        <option value="2">2 - Poor</option>
+                                        <option value="3">3 - Fair</option>
+                                        <option value="4">4 - Good</option>
+                                        <option value="5">5 - Very Good</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="morning-feeling">How did you feel in the morning?</label>
+                                    <select id="morning-feeling" name="morningFeeling">
+                                        <option value="">Select</option>
+                                        <option value="1">1 - Very Tired</option>
+                                        <option value="2">2 - Tired</option>
+                                        <option value="3">3 - Neutral</option>
+                                        <option value="4">4 - Rested</option>
+                                        <option value="5">5 - Very Rested</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="caffeine-intake">Caffeine Intake (amount and timing)</label>
+                                    <input type="text" id="caffeine-intake" name="caffeineIntake">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="exercise">Exercise (type and timing)</label>
+                                    <input type="text" id="exercise" name="exercise">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sleep-notes">Notes (stress levels, screen time, etc.)</label>
+                                <textarea id="sleep-notes" name="sleepNotes"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Save Entry</button>
+                            <button type="button" class="btn btn-secondary" id="print-diary">Print Diary</button>
+                        </form>
+                        <div id="sleep-diary-message" class="message"></div>
+                    </div>
+                </div>
+                
+                <div class="resources-section">
+                    <h3>Additional Sleep Resources</h3>
+                    
+                    <h4>Campus Resources</h4>
+                    <ul class="resources-list">
+                        <li><strong>Student Health Center:</strong> Offers sleep assessments and counseling for sleep disorders.</li>
+                        <li><strong>Wellness Workshops:</strong> Monthly workshops on sleep hygiene and stress management.</li>
+                        <li><strong>Quiet Study Spaces:</strong> The library provides quiet areas and nap pods for short rest periods.</li>
+                    </ul>
+                    
+                    <h4>Recommended Apps</h4>
+                    <ul class="resources-list">
+                        <li><strong>Sleep Cycle:</strong> Tracks your sleep patterns and wakes you during your lightest sleep phase.</li>
+                        <li><strong>Calm:</strong> Offers sleep stories, meditation, and relaxing sounds to help you fall asleep.</li>
+                        <li><strong>Headspace:</strong> Provides guided meditations specifically designed for sleep.</li>
+                        <li><strong>f.lux:</strong> Adjusts your computer screen's color temperature based on the time of day.</li>
+                    </ul>
+                    
+                    <h4>When to Seek Help</h4>
+                    <p>If you've tried these strategies and still struggle with sleep, consider speaking with a healthcare provider. Persistent sleep problems may indicate an underlying sleep disorder or health condition that requires treatment.</p>
+                    
+                    <p>Signs that you should seek professional help include:</p>
+                    <ul>
+                        <li>Consistently taking more than 30 minutes to fall asleep</li>
+                        <li>Regularly waking up multiple times during the night</li>
+                        <li>Feeling excessively tired despite getting adequate sleep</li>
+                        <li>Loud snoring, gasping, or stopping breathing during sleep (reported by roommates)</li>
+                        <li>Sleep problems that interfere with daily functioning</li>
+                    </ul>
+                    
+                    <p><strong>Contact:</strong> Student Health Center at (555) 123-4567 to schedule a sleep consultation.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 CampusConnect. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sleepDiaryForm = document.getElementById('sleep-diary-form');
+            const sleepDiaryMessage = document.getElementById('sleep-diary-message');
+            const printDiaryButton = document.getElementById('print-diary');
+            
+            // Set today's date as default
+            document.getElementById('sleep-date').valueAsDate = new Date();
+            
+            // Handle form submission
+            sleepDiaryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real application, this would save the data
+                sleepDiaryMessage.textContent = 'Sleep diary entry saved successfully!';
+                sleepDiaryMessage.className = 'message success-message';
+                
+                // Reset form after 2 seconds
+                setTimeout(() => {
+                    sleepDiaryForm.reset();
+                    document.getElementById('sleep-date').valueAsDate = new Date();
+                    sleepDiaryMessage.textContent = '';
+                }, 2000);
+            });
+            
+            // Handle print button
+            printDiaryButton.addEventListener('click', function() {
+                alert('In a real application, this would generate a printable version of your sleep diary.');
+            });
+        });
+    </script>
+</body>
+</html>

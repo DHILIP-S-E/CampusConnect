@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Gym Schedule - CampusConnect</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .schedule-container {
+            margin: 20px 0;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .schedule-table th, .schedule-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .schedule-table th {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .schedule-table tr:hover {
+            background-color: #e3f2fd;
+        }
+        
+        .class-type {
+            font-weight: bold;
+        }
+        
+        .instructor {
+            color: #0056b3;
+        }
+        
+        .facility-info {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .facility-hours {
+            margin-top: 20px;
+        }
+        
+        .facility-hours h3 {
+            margin-bottom: 10px;
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .hours-table th, .hours-table td {
+            padding: 8px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .hours-table th {
+            background-color: #e3f2fd;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Campus Gym Schedule</h1>
+            <p><a href="../student.html">← Back to Student Dashboard</a></p>
+        </header>
+        
+        <main>
+            <section>
+                <h2>Weekly Class Schedule</h2>
+                <p>Join our fitness classes led by certified instructors. All classes are free for students with a valid ID.</p>
+                
+                <div class="schedule-container">
+                    <h3>Monday - Friday</h3>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Class</th>
+                                <th>Instructor</th>
+                                <th>Location</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>6:00 AM - 7:00 AM</td>
+                                <td class="class-type">Morning Yoga</td>
+                                <td class="instructor">Sarah Johnson</td>
+                                <td>Studio 1</td>
+                                <td>All Levels</td>
+                            </tr>
+                            <tr>
+                                <td>7:30 AM - 8:30 AM</td>
+                                <td class="class-type">HIIT Workout</td>
+                                <td class="instructor">Mike Thompson</td>
+                                <td>Main Gym</td>
+                                <td>Intermediate</td>
+                            </tr>
+                            <tr>
+                                <td>9:00 AM - 10:00 AM</td>
+                                <td class="class-type">Pilates</td>
+                                <td class="instructor">Emma Davis</td>
+                                <td>Studio 2</td>
+                                <td>Beginner</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 PM - 1:00 PM</td>
+                                <td class="class-type">Lunch Break Cardio</td>
+                                <td class="instructor">James Wilson</td>
+                                <td>Main Gym</td>
+                                <td>All Levels</td>
+                            </tr>
+                            <tr>
+                                <td>4:00 PM - 5:00 PM</td>
+                                <td class="class-type">Strength Training</td>
+                                <td class="instructor">Alex Rodriguez</td>
+                                <td>Weight Room</td>
+                                <td>Intermediate</td>
+                            </tr>
+                            <tr>
+                                <td>5:30 PM - 6:30 PM</td>
+                                <td class="class-type">Zumba</td>
+                                <td class="instructor">Maria Garcia</td>
+                                <td>Studio 1</td>
+                                <td>All Levels</td>
+                            </tr>
+                            <tr>
+                                <td>7:00 PM - 8:00 PM</td>
+                                <td class="class-type">Evening Yoga</td>
+                                <td class="instructor">David Chen</td>
+                                <td>Studio 2</td>
+                                <td>All Levels</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Saturday</h3>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Class</th>
+                                <th>Instructor</th>
+                                <th>Location</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8:00 AM - 9:00 AM</td>
+                                <td class="class-type">Weekend Warrior Workout</td>
+                                <td class="instructor">Mike Thompson</td>
+                                <td>Main Gym</td>
+                                <td>Advanced</td>
+                            </tr>
+                            <tr>
+                                <td>9:30 AM - 10:30 AM</td>
+                                <td class="class-type">Yoga Flow</td>
+                                <td class="instructor">Sarah Johnson</td>
+                                <td>Studio 1</td>
+                                <td>All Levels</td>
+                            </tr>
+                            <tr>
+                                <td>11:00 AM - 12:00 PM</td>
+                                <td class="class-type">Kickboxing</td>
+                                <td class="instructor">James Wilson</td>
+                                <td>Studio 2</td>
+                                <td>Intermediate</td>
+                            </tr>
+                            <tr>
+                                <td>1:00 PM - 2:00 PM</td>
+                                <td class="class-type">Core Strength</td>
+                                <td class="instructor">Emma Davis</td>
+                                <td>Studio 1</td>
+                                <td>All Levels</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Sunday</h3>
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Class</th>
+                                <th>Instructor</th>
+                                <th>Location</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>9:00 AM - 10:00 AM</td>
+                                <td class="class-type">Gentle Yoga</td>
+                                <td class="instructor">David Chen</td>
+                                <td>Studio 1</td>
+                                <td>Beginner</td>
+                            </tr>
+                            <tr>
+                                <td>10:30 AM - 11:30 AM</td>
+                                <td class="class-type">Meditation & Stretching</td>
+                                <td class="instructor">Sarah Johnson</td>
+                                <td>Studio 2</td>
+                                <td>All Levels</td>
+                            </tr>
+                            <tr>
+                                <td>12:00 PM - 1:00 PM</td>
+                                <td class="class-type">Body Pump</td>
+                                <td class="instructor">Alex Rodriguez</td>
+                                <td>Weight Room</td>
+                                <td>Intermediate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="facility-info">
+                    <h2>Facility Information</h2>
+                    <p>Our campus gym is equipped with state-of-the-art fitness equipment, including cardio machines, free weights, and specialized training areas.</p>
+                    
+                    <div class="facility-hours">
+                        <h3>Gym Hours</h3>
+                        <table class="hours-table">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Hours</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monday - Thursday</td>
+                                    <td>5:30 AM - 10:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday</td>
+                                    <td>5:30 AM - 9:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday</td>
+                                    <td>7:00 AM - 8:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday</td>
+                                    <td>8:00 AM - 6:00 PM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>Gym Rules</h3>
+                    <ul>
+                        <li>Valid student ID required for entry</li>
+                        <li>Proper athletic attire and closed-toe shoes required</li>
+                        <li>Wipe down equipment after use</li>
+                        <li>Return weights and equipment to their designated areas</li>
+                        <li>No food allowed in workout areas</li>
+                        <li>Water in closed containers only</li>
+                        <li>Be respectful of others and share equipment during busy times</li>
+                    </ul>
+                    
+                    <h3>Contact Information</h3>
+                    <p>For more information or to schedule a personal training session, please contact:</p>
+                    <p>Campus Recreation Center<br>
+                    Phone: (555) 123-4567<br>
+                    Email: gym@campusconnect.edu</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 CampusConnect. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - Sign Up</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/signup.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CampusConnect</h1>
+            <p>College Management System</p>
+        </header>
+        
+        <main>
+            <div class="login-container">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select Role</option>
+                            <option value="student">Student</option>
+                            <option value="faculty">Faculty</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+                <div id="error-message" class="error-message"></div>
+                <div id="success-message" class="success-message"></div>
+                <p class="login-link">Already have an account? <a href="../index.html">Login here</a></p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 CampusConnect. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('signupForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                signup();
+            });
+        });
+    </script>
+</body>
+</html>

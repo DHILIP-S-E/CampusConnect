@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Counseling Services - CampusConnect</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .counseling-section {
+            margin-bottom: 30px;
+        }
+        
+        .counseling-intro {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .service-card {
+            flex: 1 1 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h4 {
+            color: #0056b3;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .counselor-profiles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .counselor-card {
+            flex: 1 1 250px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .counselor-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #e3f2fd;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #0056b3;
+        }
+        
+        .counselor-info h4 {
+            color: #0056b3;
+            margin-top: 0;
+            text-align: center;
+        }
+        
+        .counselor-title {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .counselor-specialties {
+            margin-top: 10px;
+        }
+        
+        .specialty-tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #0056b3;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin: 2px;
+        }
+        
+        .appointment-section {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        
+        .appointment-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .appointment-option {
+            flex: 1 1 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        
+        .appointment-option h4 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+        
+        .emergency-box {
+            background-color: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 30px 0;
+        }
+        
+        .emergency-box h3 {
+            color: #d32f2f;
+            margin-top: 0;
+        }
+        
+        .emergency-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .emergency-contact {
+            flex: 1 1 200px;
+            background-color: #fff;
+            border: 1px solid #ffcdd2;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        
+        .emergency-contact h4 {
+            color: #d32f2f;
+            margin-top: 0;
+        }
+        
+        .faq-section {
+            margin-top: 30px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .faq-item h4 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .resources-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .resources-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .resources-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0056b3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Campus Counseling Services</h1>
+            <p><a href="../student.html">← Back to Student Dashboard</a></p>
+        </header>
+        
+        <main>
+            <section class="counseling-section">
+                <div class="counseling-intro">
+                    <h2>Supporting Your Mental Health</h2>
+                    <p>The Campus Counseling Center provides confidential mental health services to all enrolled students. Our team of licensed professionals is committed to supporting your academic success and personal well-being through a variety of counseling and psychological services.</p>
+                    <p>We understand that college life can be challenging, and seeking help is a sign of strength. Whether you're dealing with stress, anxiety, depression, relationship issues, or other concerns, we're here to help you develop the skills and strategies to thrive.</p>
+                </div>
+                
+                <div class="emergency-box">
+                    <h3>Mental Health Emergency Resources</h3>
+                    <p>If you are experiencing a mental health emergency or having thoughts of harming yourself or others, please use these immediate resources:</p>
+                    
+                    <div class="emergency-contacts">
+                        <div class="emergency-contact">
+                            <h4>Campus Crisis Line</h4>
+                            <p><strong>Phone:</strong> (555) 123-9999</p>
+                            <p><strong>Available:</strong> 24/7</p>
+                        </div>
+                        
+                        <div class="emergency-contact">
+                            <h4>National Suicide Prevention Lifeline</h4>
+                            <p><strong>Phone:</strong> 988 or 1-800-273-8255</p>
+                            <p><strong>Available:</strong> 24/7</p>
+                        </div>
+                        
+                        <div class="emergency-contact">
+                            <h4>Crisis Text Line</h4>
+                            <p><strong>Text:</strong> HOME to 741741</p>
+                            <p><strong>Available:</strong> 24/7</p>
+                        </div>
+                        
+                        <div class="emergency-contact">
+                            <h4>Campus Security</h4>
+                            <p><strong>Phone:</strong> (555) 123-8888</p>
+                            <p><strong>Available:</strong> 24/7</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Our Services</h3>
+                <div class="services-container">
+                    <div class="service-card">
+                        <h4>Individual Counseling</h4>
+                        <p>One-on-one sessions with a licensed counselor to address personal concerns, develop coping strategies, and work toward your goals.</p>
+                        <p><strong>Session Length:</strong> 50 minutes</p>
+                        <p><strong>Availability:</strong> Up to 10 sessions per academic year</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Group Counseling</h4>
+                        <p>Facilitated group sessions focused on specific topics or shared experiences, providing support and connection with peers.</p>
+                        <p><strong>Current Groups:</strong> Anxiety Management, Grief Support, LGBTQ+ Support, International Student Adjustment</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Crisis Intervention</h4>
+                        <p>Immediate support for students experiencing acute psychological distress or crisis situations.</p>
+                        <p><strong>Walk-in Hours:</strong> Monday-Friday, 10:00 AM - 4:00 PM</p>
+                        <p><strong>After Hours:</strong> Call the Campus Crisis Line at (555) 123-9999</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Psychiatric Services</h4>
+                        <p>Evaluation and medication management with our campus psychiatrist for students who may benefit from medication as part of their treatment.</p>
+                        <p><strong>Note:</strong> Referral from a counselor required</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Workshops & Outreach</h4>
+                        <p>Educational programs on topics such as stress management, healthy relationships, and emotional wellness.</p>
+                        <p><strong>Schedule:</strong> See our <a href="#">Events Calendar</a> for upcoming workshops</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Consultation Services</h4>
+                        <p>Guidance for faculty, staff, and students concerned about someone's mental health or well-being.</p>
+                        <p><strong>Contact:</strong> (555) 123-4567 or counseling@campusconnect.edu</p>
+                    </div>
+                </div>
+                
+                <h3>Meet Our Counseling Team</h3>
+                <p>Our diverse team of licensed mental health professionals is committed to providing culturally responsive care to all students.</p>
+                
+                <div class="counselor-profiles">
+                    <div class="counselor-card">
+                        <div class="counselor-photo">DR</div>
+                        <div class="counselor-info">
+                            <h4>Dr. Rachel Martinez, Ph.D.</h4>
+                            <p class="counselor-title">Director of Counseling Services</p>
+                            <p>Dr. Martinez has over 15 years of experience in college counseling and specializes in anxiety disorders, trauma, and multicultural counseling.</p>
+                            <div class="counselor-specialties">
+                                <span class="specialty-tag">Anxiety</span>
+                                <span class="specialty-tag">Trauma</span>
+                                <span class="specialty-tag">Multicultural Issues</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="counselor-card">
+                        <div class="counselor-photo">JW</div>
+                        <div class="counselor-info">
+                            <h4>Dr. James Wilson, Psy.D.</h4>
+                            <p class="counselor-title">Senior Staff Psychologist</p>
+                            <p>Dr. Wilson specializes in depression, identity development, and men's issues. He facilitates the Men's Support Group and LGBTQ+ Support Group.</p>
+                            <div class="counselor-specialties">
+                                <span class="specialty-tag">Depression</span>
+                                <span class="specialty-tag">Identity</span>
+                                <span class="specialty-tag">LGBTQ+ Issues</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="counselor-card">
+                        <div class="counselor-photo">SL</div>
+                        <div class="counselor-info">
+                            <h4>Sarah Lee, LCSW</h4>
+                            <p class="counselor-title">Staff Counselor</p>
+                            <p>Sarah specializes in stress management, relationship issues, and working with international students. She leads the Anxiety Management workshop series.</p>
+                            <div class="counselor-specialties">
+                                <span class="specialty-tag">Stress</span>
+                                <span class="specialty-tag">Relationships</span>
+                                <span class="specialty-tag">International Students</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="counselor-card">
+                        <div class="counselor-photo">MJ</div>
+                        <div class="counselor-info">
+                            <h4>Dr. Michael Johnson, M.D.</h4>
+                            <p class="counselor-title">Consulting Psychiatrist</p>
+                            <p>Dr. Johnson provides psychiatric evaluation and medication management for students referred by our counseling staff.</p>
+                            <div class="counselor-specialties">
+                                <span class="specialty-tag">Medication Management</span>
+                                <span class="specialty-tag">ADHD</span>
+                                <span class="specialty-tag">Mood Disorders</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="appointment-section">
+                    <h3>How to Schedule an Appointment</h3>
+                    <p>We offer multiple ways to connect with our counseling services:</p>
+                    
+                    <div class="appointment-options">
+                        <div class="appointment-option">
+                            <h4>Initial Consultation</h4>
+                            <p>All new clients begin with a 30-minute initial consultation to discuss your concerns and determine the best services for your needs.</p>
+                            <p><strong>Schedule by:</strong> Calling (555) 123-4567 or using our <a href="#">online scheduling portal</a></p>
+                        </div>
+                        
+                        <div class="appointment-option">
+                            <h4>Same-Day Appointments</h4>
+                            <p>Limited same-day appointments are available for urgent concerns that are not emergencies.</p>
+                            <p><strong>Available:</strong> Monday-Friday, call at 8:00 AM to schedule for that day</p>
+                        </div>
+                        
+                        <div class="appointment-option">
+                            <h4>Let's Talk Drop-In Hours</h4>
+                            <p>Brief, 15-20 minute consultations with a counselor at various locations around campus. No appointment needed.</p>
+                            <p><strong>Schedule:</strong> See our <a href="#">Let's Talk schedule</a> for times and locations</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Appointment Policies</h4>
+                    <ul>
+                        <li><strong>Cancellations:</strong> Please provide 24-hour notice if you need to cancel or reschedule.</li>
+                        <li><strong>Late Arrivals:</strong> If you arrive more than 15 minutes late, you may need to reschedule.</li>
+                        <li><strong>No-Shows:</strong> After two no-shows, you may be limited to same-day appointments only.</li>
+                    </ul>
+                </div>
+                
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    
+                    <div class="faq-item">
+                        <h4>Is counseling confidential?</h4>
+                        <p>Yes, all counseling services are confidential. Information shared in counseling sessions is not disclosed without your written permission, except in situations where there is a risk of harm to yourself or others, suspicion of abuse of a minor or vulnerable adult, or when required by law or court order.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>How much do counseling services cost?</h4>
+                        <p>Most counseling services are covered by your student health fee. Individual and group counseling sessions have no additional cost. Psychiatric services may have a nominal fee, and some specialized assessments may have associated costs. We will always inform you of any potential costs before services are provided.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>How long will I have to wait for an appointment?</h4>
+                        <p>Wait times vary throughout the semester, with longer wait times typically occurring during midterms and finals. Initial consultations are usually available within 1-2 weeks. If you need immediate support, please use our crisis services or same-day appointment options.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>What if I need more sessions than the 10-session limit?</h4>
+                        <p>Our counselors will work with you to determine the best course of action. Options may include group counseling, referrals to community providers, or in some cases, exceptions to the session limit based on clinical need.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Can I request a specific counselor?</h4>
+                        <p>Yes, you can request a specific counselor when scheduling your initial consultation. We will do our best to accommodate your request, but please note that availability may be limited for certain counselors.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Do you offer virtual counseling sessions?</h4>
+                        <p>Yes, we offer telehealth appointments via a secure video platform for students who prefer virtual sessions or who are unable to come to campus. These sessions follow the same confidentiality protocols as in-person sessions.</p>
+                    </div>
+                </div>
+                
+                <h3>Additional Mental Health Resources</h3>
+                
+                <ul class="resources-list">
+                    <li><strong>Campus Wellness App:</strong> Download our free app for self-help resources, guided meditations, and quick access to support services.</li>
+                    <li><strong>Self-Help Library:</strong> Visit our office to borrow books on various mental health topics.</li>
+                    <li><strong>Online Screenings:</strong> Take a confidential mental health screening on our website.</li>
+                    <li><strong>Wellness Workshops:</strong> Check our calendar for upcoming workshops on stress management, mindfulness, and other wellness topics.</li>
+                    <li><strong>Peer Support Program:</strong> Connect with trained student peer supporters for additional guidance and resources.</li>
+                </ul>
+                
+                <h3>Contact Information</h3>
+                <p><strong>Location:</strong> Student Health Center, 2nd Floor<br>
+                <strong>Hours:</strong> Monday-Friday, 8:00 AM - 5:00 PM<br>
+                <strong>Phone:</strong> (555) 123-4567<br>
+                <strong>Email:</strong> counseling@campusconnect.edu<br>
+                <strong>Crisis Line (24/7):</strong> (555) 123-9999</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 CampusConnect. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

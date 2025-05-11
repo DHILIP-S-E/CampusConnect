@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Management Techniques - CampusConnect</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/student_features.css">
+    <style>
+        .wellness-resource-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .resource-navigation {
+            margin-bottom: 20px;
+        }
+        
+        .resource-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .technique-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .technique-steps {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .practice-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .practice-item {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .resource-cta {
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+        }
+        
+        .close-modal {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .meditation-player {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        audio {
+            width: 100%;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CampusConnect Wellness Center</h1>
+            <p>Resources for Student Wellbeing</p>
+        </header>
+        
+        <main>
+            <div class="wellness-resource-container">
+                <h2>Stress Management Techniques</h2>
+                
+                <div class="resource-navigation">
+                    <a href="../student.html" class="btn btn-secondary">← Back to Dashboard</a>
+                </div>
+                
+                <div class="resource-content">
+                    <section class="resource-section">
+                        <h3>Understanding Stress</h3>
+                        <p>Stress is your body's way of responding to any kind of demand or threat. When you sense danger—whether it's real or imagined—the body's defenses kick into high gear in a rapid, automatic process known as the "fight-or-flight" reaction or the "stress response."</p>
+                        
+                        <p>As a student, common sources of stress include:</p>
+                        <ul>
+                            <li>Academic pressure and workload</li>
+                            <li>Time management challenges</li>
+                            <li>Financial concerns</li>
+                            <li>Social pressures and relationships</li>
+                            <li>Uncertainty about the future</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="resource-section">
+                        <h3>Quick Stress Relief Techniques</h3>
+                        
+                        <div class="technique-card">
+                            <h4>1. Deep Breathing</h4>
+                            <p>Deep breathing is one of the best ways to lower stress in the body. When you breathe deeply, it sends a message to your brain to calm down and relax.</p>
+                            <div class="technique-steps">
+                                <ol>
+                                    <li>Sit comfortably with your back straight</li>
+                                    <li>Put one hand on your chest and the other on your stomach</li>
+                                    <li>Breathe in deeply through your nose for 4 seconds</li>
+                                    <li>Hold your breath for 1-2 seconds</li>
+                                    <li>Slowly exhale through your mouth for 6 seconds</li>
+                                    <li>Repeat 5-10 times</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4>2. Progressive Muscle Relaxation</h4>
+                            <p>This technique involves tensing and then releasing each muscle group in your body.</p>
+                            <div class="technique-steps">
+                                <ol>
+                                    <li>Start with your facial muscles, tensing them for 5 seconds</li>
+                                    <li>Release and notice the feeling of relaxation</li>
+                                    <li>Move down to your neck and shoulders</li>
+                                    <li>Continue through your arms, chest, abdomen, legs, and feet</li>
+                                    <li>Focus on the difference between tension and relaxation</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <div class="technique-card">
+                            <h4>3. Mindfulness Meditation</h4>
+                            <p>Mindfulness involves focusing on the present moment without judgment.</p>
+                            <div class="technique-steps">
+                                <ol>
+                                    <li>Find a quiet place to sit comfortably</li>
+                                    <li>Focus on your breathing</li>
+                                    <li>When your mind wanders, gently bring your attention back to your breath</li>
+                                    <li>Start with 5 minutes and gradually increase</li>
+                                    <li>Practice regularly for best results</li>
+                                </ol>
+                            </div>
+                            <p><a href="#" class="btn btn-sm btn-primary guided-meditation-btn">Try Guided Meditation</a></p>
+                        </div>
+                    </section>
+                    
+                    <section class="resource-section">
+                        <h3>Daily Stress Management Practices</h3>
+                        
+                        <div class="practice-list">
+                            <div class="practice-item">
+                                <h4>Physical Activity</h4>
+                                <p>Regular exercise can help reduce stress by releasing endorphins and improving sleep quality. Aim for at least 30 minutes of moderate activity most days.</p>
+                            </div>
+                            
+                            <div class="practice-item">
+                                <h4>Healthy Sleep Habits</h4>
+                                <p>Prioritize 7-9 hours of quality sleep each night. Establish a regular sleep schedule and create a relaxing bedtime routine.</p>
+                            </div>
+                            
+                            <div class="practice-item">
+                                <h4>Time Management</h4>
+                                <p>Use planners or digital tools to organize your schedule. Break large tasks into smaller, manageable steps and prioritize your responsibilities.</p>
+                            </div>
+                            
+                            <div class="practice-item">
+                                <h4>Social Connection</h4>
+                                <p>Maintain relationships with friends and family. Sharing your concerns with others can provide emotional support and new perspectives.</p>
+                            </div>
+                            
+                            <div class="practice-item">
+                                <h4>Limit Stimulants</h4>
+                                <p>Reduce consumption of caffeine, alcohol, and sugar, which can increase anxiety and affect sleep quality.</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="resource-section">
+                        <h3>Campus Resources</h3>
+                        <p>CampusConnect offers several resources to help you manage stress:</p>
+                        <ul>
+                            <li><strong>Counseling Services:</strong> Free confidential counseling sessions</li>
+                            <li><strong>Wellness Workshops:</strong> Regular workshops on stress management</li>
+                            <li><strong>Meditation Room:</strong> Located in the Student Center, open daily</li>
+                            <li><strong>Fitness Center:</strong> Access to gym facilities and fitness classes</li>
+                        </ul>
+                        
+                        <div class="resource-cta">
+                            <p>Need immediate support? Our counselors are available:</p>
+                            <p><strong>Counseling Center:</strong> 555-123-4567</p>
+                            <p><strong>Crisis Hotline:</strong> 555-789-0123 (24/7)</p>
+                            <a href="#" class="btn btn-primary schedule-btn">Schedule an Appointment</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 CampusConnect. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <div id="meditation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Guided Meditation</h2>
+            <div class="meditation-player">
+                <p>5-Minute Guided Meditation for Stress Relief</p>
+                <audio controls>
+                    <source src="#" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Close your eyes, find a comfortable position, and follow along with the guided meditation.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Guided meditation button
+            const meditationBtn = document.querySelector('.guided-meditation-btn');
+            const meditationModal = document.getElementById('meditation-modal');
+            const closeModal = document.querySelector('.close-modal');
+            
+            if (meditationBtn) {
+                meditationBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    meditationModal.style.display = 'block';
+                });
+            }
+            
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    meditationModal.style.display = 'none';
+                });
+            }
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === meditationModal) {
+                    meditationModal.style.display = 'none';
+                }
+            });
+            
+            // Schedule appointment button
+            const scheduleBtn = document.querySelector('.schedule-btn');
+            if (scheduleBtn) {
+                scheduleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('You will be redirected to the appointment scheduling system.');
+                    window.location.href = '../student.html#wellness-section';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

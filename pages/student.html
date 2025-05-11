@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - CampusConnect</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/student_features.css">
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/getCurrentUser.js"></script>
+    <script src="../js/student_functions.js"></script> <!-- Added student functions -->
+    <script src="../js/ai_tutor.js"></script>
+</head>
+<body class="role-student">
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">CampusConnect</div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" class="nav-link" id="nav-dashboard">Dashboard</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="nav-courses">Courses</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="nav-materials">Study Materials</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="nav-attendance">Attendance</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="nav-ai-tutor">AI Tutor</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="nav-wellness">Wellness Center</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="nav-tutoring">Personal Tutoring</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="nav-profile">My Profile</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="logout-btn">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header>
+            <h1>Student Dashboard</h1>
+            <p>Welcome, <span id="student-name">Student</span></p>
+        </header>
+
+        <main>
+            <!-- Dashboard Overview Section -->
+            <section id="dashboard-section" class="dashboard-section">
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <h3>Courses</h3>
+                            <p class="stat-number" id="total-courses">0</p>
+                            <p class="stat-label">Enrolled Courses</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-info">
+                            <h3>Attendance</h3>
+                            <p class="stat-number" id="attendance-rate">0%</p>
+                            <p class="stat-label">Average Rate</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-info">
+                            <h3>Assignments</h3>
+                            <p class="stat-number" id="pending-assignments">0</p>
+                            <p class="stat-label">Pending</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-info">
+                            <h3>Certificates</h3>
+                            <p class="stat-number" id="total-certificates">0</p>
+                            <p class="stat-label">Earned</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-row">
+                    <div class="card">
+                        <h2>Upcoming Classes</h2>
+                        <div id="upcoming-classes">
+                            <div class="class-item">
+                                <h4>Introduction to Programming</h4>
+                                <p>Date: Tomorrow, 9:00 AM</p>
+                                <p>Location: Room 101</p>
+                            </div>
+                            <div class="class-item">
+                                <h4>Database Management</h4>
+                                <p>Date: Oct 20, 2023, 11:00 AM</p>
+                                <p>Location: Computer Lab 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>Recent Announcements</h2>
+                        <div id="recent-announcements">
+                            <div class="announcement-item">
+                                <h4>Mid-term Exam Schedule</h4>
+                                <p>Mid-term exams will be held from November 10-15, 2023.</p>
+                                <p class="announcement-meta">Posted: Oct 15, 2023</p>
+                            </div>
+                            <div class="announcement-item">
+                                <h4>Library Hours Extended</h4>
+                                <p>The library will now be open until 10:00 PM on weekdays.</p>
+                                <p class="announcement-meta">Posted: Oct 10, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="courses-section" class="dashboard-section" style="display: none;">
+                <div class="card">
+                    <h2>Available Courses</h2>
+                    <p>List of all available courses in the system. Enrollment functionality is a future enhancement.</p>
+                    <div class="filters">
+                        <label for="course-department-filter">Filter by Department:</label>
+                        <select id="course-department-filter">
+                            <option value="all">All Departments</option>
+                            <!-- Departments will be populated by JS -->
+                        </select>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Code</th>
+                                <th>Department</th>
+                                <th>Credits</th>
+                                <th>Instructor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-courses-table-body">
+                            <!-- Course records will be loaded here -->
+                            <tr><td colspan="5">Loading courses...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Study Materials Section -->
+            <section id="materials-section" class="dashboard-section" style="display: none;">
+                <div class="card">
+                    <h2>Study Materials</h2>
+                    <div id="study-materials-list">
+                        <!-- Study materials will be loaded here by JavaScript -->
+                        <p>Loading study materials...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Attendance Section -->
+            <section id="attendance-section" class="dashboard-section" style="display: none;">
+                <div class="card">
+                    <h2>My Attendance Records</h2>
+                    <div class="filters">
+                        <label for="attendance-subject-filter">Filter by Subject:</label>
+                        <select id="attendance-subject-filter">
+                            <option value="all">All Subjects</option>
+                            <!-- Subjects will be populated by JS -->
+                        </select>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Subject</th>
+                                <th>Class/Section</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-attendance-table-body">
+                            <!-- Attendance records will be loaded here -->
+                            <tr><td colspan="4">Loading attendance records...</td></tr>
+                        </tbody>
+                    </table>
+                    <div id="attendance-summary">
+                        <!-- Summary like overall percentage will be shown here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Tutor Section -->
+            <section id="ai-tutor-section" class="dashboard-section" style="display: none;">
+                <div class="card">
+                    <h2>AI Tutor</h2>
+                    <p>Get help with your studies using our AI-powered tutor.</p>
+                    
+                    <div class="ai-tutor-interface">
+                        <div class="chat-container" id="ai-chat-container">
+                            <div class="chat-messages" id="ai-chat-messages">
+                                <div class="message ai-message">
+                                    <div class="message-content">
+                                        <p>Hello! I'm your AI tutor. How can I help you with your studies today?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-input">
+                                <input type="text" id="ai-chat-input" placeholder="Ask me anything about your courses...">
+                                <button id="ai-chat-send" class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-tutor-subjects">
+                            <h3>Popular Topics</h3>
+                            <div class="subject-buttons">
+                                <button class="subject-btn" data-subject="math">Mathematics</button>
+                                <button class="subject-btn" data-subject="programming">Programming</button>
+                                <button class="subject-btn" data-subject="science">Science</button>
+                                <button class="subject-btn" data-subject="history">History</button>
+                                <button class="subject-btn" data-subject="literature">Literature</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wellness Center Section -->
+            <section id="wellness-section" class="dashboard-section" style="display: none;">
+                <div class="card">
+                    <h2>Wellness Center</h2>
+                    <p>Resources and support for your mental and physical wellbeing.</p>
+                    
+                    <div class="wellness-resources">
+                        <div class="wellness-category">
+                            <h3>Mental Health Resources</h3>
+                            <ul class="resource-list">
+                                <li><a href="wellness/stress_management.html" class="resource-link">Stress Management Techniques</a></li>
+                                <li><a href="wellness/anxiety_depression.html" class="resource-link">Anxiety & Depression Support</a></li>
+                                <li><a href="wellness/mindfulness.html" class="resource-link">Mindfulness Meditation Guide</a></li>
+                                <li><a href="wellness/counseling.html" class="resource-link">Campus Counseling Services</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="wellness-category">
+                            <h3>Physical Health</h3>
+                            <ul class="resource-list">
+                                <li><a href="wellness/gym_schedule.html" class="resource-link">Campus Gym Schedule</a></li>
+                                <li><a href="wellness/nutrition.html" class="resource-link">Nutrition Guidelines for Students</a></li>
+                                <li><a href="wellness/sleep_tips.html" class="resource-link">Sleep Improvement Tips</a></li>
+                                <li><a href="wellness/health_services.html" class="resource-link">Campus Health Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="wellness-appointment">
+                        <h3>Schedule an Appointment</h3>
+                        <form id="wellness-appointment-form">
+                            <div class="form-group">
+                                <label for="appointment-type">Appointment Type</label>
+                                <select id="appointment-type" name="appointmentType" required>
+                                    <option value="">Select Type</option>
+                                    <option value="counseling">Counseling Session</option>
+                                    <option value="health">Health Check-up</option>
+                                    <option value="nutrition">Nutrition Consultation</option>
+                                    <option value="fitness">Fitness Assessment</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-date">Preferred Date</label>
+                                <input type="date" id="appointment-date" name="appointmentDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-time">Preferred Time</label>
+                                <select id="appointment-time" name="appointmentTime" required>
+                                    <option value="">Select Time</option>
+                                    <option value="morning">Morning (9AM - 12PM)</option>
+                                    <option value="afternoon">Afternoon (1PM - 4PM)</option>
+                                    <option value="evening">Evening (5PM - 7PM)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-notes">Additional Notes</label>
+                                <textarea id="appointment-notes" name="appointmentNotes" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Request Appointment</button>
+                        </form>
+                        <div id="wellness-message" class="message"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Personal Tutoring Section -->
+            <section id="tutoring-section" class="dashboard-section" style="display: none;">
+                <div class="card">
+                    <h2>Personal Tutoring</h2>
+                    <p>Connect with tutors for personalized learning assistance.</p>
+                    
+                    <div class="tutoring-search">
+                        <h3>Find a Tutor</h3>
+                        <div class="search-filters">
+                            <div class="form-group">
+                                <label for="tutor-subject">Subject</label>
+                                <select id="tutor-subject" name="tutorSubject">
+                                    <option value="">All Subjects</option>
+                                    <option value="math">Mathematics</option>
+                                    <option value="cs">Computer Science</option>
+                                    <option value="physics">Physics</option>
+                                    <option value="chemistry">Chemistry</option>
+                                    <option value="biology">Biology</option>
+                                    <option value="english">English</option>
+                                    <option value="history">History</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tutor-availability">Availability</label>
+                                <select id="tutor-availability" name="tutorAvailability">
+                                    <option value="">Any Time</option>
+                                    <option value="weekday">Weekdays</option>
+                                    <option value="weekend">Weekends</option>
+                                    <option value="evening">Evenings</option>
+                                    <option value="morning">Mornings</option>
+                                </select>
+                            </div>
+                            <button id="search-tutors-btn" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tutors-list" id="tutors-list">
+                        <div class="tutor-card">
+                            <div class="tutor-info">
+                                <h4>Dr. John Smith</h4>
+                                <p><strong>Subjects:</strong> Mathematics, Physics</p>
+                                <p><strong>Availability:</strong> Weekdays, Evenings</p>
+                                <p><strong>Rating:</strong> ★★★★★ (4.9/5)</p>
+                                <p>PhD in Applied Mathematics with 10+ years of teaching experience.</p>
+                            </div>
+                            <div class="tutor-actions">
+                                <button class="btn btn-secondary view-profile-btn" data-id="tutor1">View Profile</button>
+                                <button class="btn btn-primary book-session-btn" data-id="tutor1">Book Session</button>
+                            </div>
+                        </div>
+                        
+                        <div class="tutor-card">
+                            <div class="tutor-info">
+                                <h4>Prof. Emily Johnson</h4>
+                                <p><strong>Subjects:</strong> Computer Science, Programming</p>
+                                <p><strong>Availability:</strong> Weekends, Evenings</p>
+                                <p><strong>Rating:</strong> ★★★★☆ (4.7/5)</p>
+                                <p>Computer Science professor specializing in algorithms and data structures.</p>
+                            </div>
+                            <div class="tutor-actions">
+                                <button class="btn btn-secondary view-profile-btn" data-id="tutor2">View Profile</button>
+                                <button class="btn btn-primary book-session-btn" data-id="tutor2">Book Session</button>
+                            </div>
+                        </div>
+                        
+                        <div class="tutor-card">
+                            <div class="tutor-info">
+                                <h4>Dr. Michael Chen</h4>
+                                <p><strong>Subjects:</strong> Chemistry, Biology</p>
+                                <p><strong>Availability:</strong> Weekdays, Mornings</p>
+                                <p><strong>Rating:</strong> ★★★★★ (4.8/5)</p>
+                                <p>Biochemistry researcher with a passion for teaching science concepts.</p>
+                            </div>
+                            <div class="tutor-actions">
+                                <button class="btn btn-secondary view-profile-btn" data-id="tutor3">View Profile</button>
+                                <button class="btn btn-primary book-session-btn" data-id="tutor3">Book Session</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="booking-form" class="booking-form" style="display: none;">
+                        <h3>Book a Tutoring Session</h3>
+                        <form id="tutor-booking-form">
+                            <input type="hidden" id="tutor-id" name="tutorId">
+                            <div class="form-group">
+                                <label for="session-date">Date</label>
+                                <input type="date" id="session-date" name="sessionDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="session-time">Time</label>
+                                <select id="session-time" name="sessionTime" required>
+                                    <option value="">Select Time</option>
+                                    <option value="9:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="session-topic">Topic/Questions</label>
+                                <textarea id="session-topic" name="sessionTopic" rows="3" required></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                                <button type="button" class="btn btn-secondary" id="cancel-booking">Cancel</button>
+                            </div>
+                        </form>
+                        <div id="booking-message" class="message"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Profile Section -->
+            <section id="profile-section" class="dashboard-section" style="display: none;">
+                <div class="card">
+                    <h2>My Profile</h2>
+                    <div id="profile-details">
+                        <!-- Profile details will be loaded here by loadProfileData() -->
+                        <p>Loading profile...</p>
+                    </div>
+                    <!-- Edit profile form (can be a modal or inline) -->
+                    <button id="edit-profile-btn" class="btn btn-secondary" style="margin-top: 15px;">Edit Profile</button>
+                    <div id="edit-profile-card" class="card" style="display:none; margin-top:20px;">
+                        <h3>Edit Your Profile</h3>
+                        <form id="edit-profile-form">
+                            <div class="form-group">
+                                <label for="profile-name">Full Name:</label>
+                                <input type="text" id="profile-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-email">Email:</label>
+                                <input type="email" id="profile-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-department">Department:</label>
+                                <input type="text" id="profile-department" name="department">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-year">Year:</label>
+                                <input type="text" id="profile-year" name="year">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-phone">Phone:</label>
+                                <input type="tel" id="profile-phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-address">Address:</label>
+                                <textarea id="profile-address" name="address" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-dob">Date of Birth:</label>
+                                <input type="date" id="profile-dob" name="dob">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="button" id="cancel-profile-edit" class="btn btn-secondary">Cancel</button>
+                        </form>
+                        <div id="profile-message" class="message"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>My Certificates</h2>
+                    <div id="certificates-list">
+                        <!-- Certificates will be loaded here by loadProfileData() -->
+                        <p>Loading certificates...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 CampusConnect. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function refreshStudentDashboardStats() {
+            // These functions should ideally update the dashboard stat cards if they exist
+            if (typeof loadStudentCourses === 'function') {
+                loadStudentCourses(); 
+            } else {
+                console.error('loadStudentCourses function not found for dashboard stats.');
+                const coursesStat = document.getElementById('total-courses');
+                if (coursesStat) coursesStat.textContent = 'Error';
+            }
+            if (typeof loadStudentAttendance === 'function') {
+                loadStudentAttendance(); 
+            } else {
+                console.error('loadStudentAttendance function not found for dashboard stats.');
+                const attendanceStat = document.getElementById('attendance-rate');
+                if (attendanceStat) attendanceStat.textContent = 'Error';
+            }
+            if (typeof loadProfileData === 'function') { 
+                // loadProfileData also handles the certificates count for the dashboard
+                loadProfileData();
+            } else {
+                console.error('loadProfileData function not found for dashboard stats (for certificates).');
+                const certificatesStat = document.getElementById('total-certificates');
+                if (certificatesStat) certificatesStat.textContent = 'Error';
+            }
+            // Pending assignments are static for now, default to 0.
+            const pendingAssignments = document.getElementById('pending-assignments');
+            if(pendingAssignments) pendingAssignments.textContent = '0'; // Or load if implemented
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user has permission to access this page
+            const user = getCurrentUser();
+            if (!user) {
+                alert('You must be logged in to access this page.');
+                window.location.href = '../index.html';
+                return;
+            }
+            
+            // Set student name
+            const studentNameElement = document.getElementById('student-name');
+            if (studentNameElement) {
+                studentNameElement.textContent = user.fullName || user.username || 'Student';
+            }
+            
+            // Initial load of dashboard stats since it's the default view
+            refreshStudentDashboardStats(); 
+            showSection('dashboard-section'); // Ensure dashboard is shown by default
+
+            // Setup navigation
+            document.getElementById('nav-dashboard').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('dashboard-section');
+                refreshStudentDashboardStats(); // Reload stats when dashboard tab is clicked
+            });
+            
+            document.getElementById('nav-courses').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('courses-section');
+                if (typeof loadStudentCourses === 'function') {
+                    loadStudentCourses();
+                } else {
+                    console.error('loadStudentCourses function not found.');
+                    document.getElementById('student-courses-table-body').innerHTML = '<tr><td colspan="5" class="error-message">Error loading courses. Function not available.</td></tr>';
+                }
+            });
+            
+            document.getElementById('nav-materials').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('materials-section');
+                // Load study materials when the section is shown
+                if (typeof loadStudyMaterialsByCategory === 'function') {
+                    loadStudyMaterialsByCategory(); 
+                } else {
+                    console.error('loadStudyMaterialsByCategory function not found.');
+                    const materialsList = document.getElementById('study-materials-list');
+                    if (materialsList) {
+                        materialsList.innerHTML = '<p class="error-message">Error loading materials. Function not available.</p>';
+                    }
+                }
+            });
+            
+            document.getElementById('nav-attendance').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('attendance-section');
+                if (typeof loadStudentAttendance === 'function') {
+                    loadStudentAttendance();
+                } else {
+                    console.error('loadStudentAttendance function not found.');
+                    document.getElementById('student-attendance-table-body').innerHTML = '<tr><td colspan="4" class="error-message">Error loading attendance. Function not available.</td></tr>';
+                }
+            });
+            
+            document.getElementById('nav-ai-tutor').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('ai-tutor-section');
+            });
+            
+            document.getElementById('nav-wellness').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('wellness-section');
+            });
+            
+            document.getElementById('nav-tutoring').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('tutoring-section');
+            });
+
+            document.getElementById('nav-profile').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSection('profile-section');
+                if (typeof loadProfileData === 'function') {
+                    loadProfileData(); // This function loads both profile and certificates
+                } else {
+                    console.error('loadProfileData function not found.');
+                    document.getElementById('profile-details').innerHTML = '<p class="error-message">Error loading profile. Function not available.</p>';
+                    document.getElementById('certificates-list').innerHTML = '<p class="error-message">Error loading certificates. Function not available.</p>';
+                }
+            });
+            
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logout();
+            });
+            
+            // AI Tutor functionality
+            const aiChatInput = document.getElementById('ai-chat-input');
+            const aiChatSend = document.getElementById('ai-chat-send');
+            const aiChatMessages = document.getElementById('ai-chat-messages');
+            
+            aiChatSend.addEventListener('click', function() {
+                sendAIMessage();
+            });
+            
+            aiChatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendAIMessage();
+                }
+            });
+            
+            // Subject buttons for AI Tutor
+            document.querySelectorAll('.subject-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const subject = this.getAttribute('data-subject');
+                    aiChatInput.value = `Help me with ${subject}`;
+                    sendAIMessage();
+                });
+            });
+            
+            // Wellness appointment form
+            const wellnessForm = document.getElementById('wellness-appointment-form');
+            if (wellnessForm) {
+                wellnessForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const messageElement = document.getElementById('wellness-message');
+                    messageElement.textContent = 'Appointment request submitted successfully! We will contact you to confirm.';
+                    messageElement.className = 'message success-message';
+                    this.reset();
+                });
+            }
+            
+            // Tutoring functionality
+            const searchTutorsBtn = document.getElementById('search-tutors-btn');
+            if (searchTutorsBtn) {
+                searchTutorsBtn.addEventListener('click', function() {
+                    // In a real app, this would filter tutors based on selection
+                    alert('Searching for tutors with the selected criteria...');
+                });
+            }
+            
+            // View tutor profile buttons
+            document.querySelectorAll('.view-profile-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const tutorId = this.getAttribute('data-id');
+                    alert(`Viewing profile for tutor ID: ${tutorId}`);
+                });
+            });
+            
+            // Book tutor session buttons
+            document.querySelectorAll('.book-session-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const tutorId = this.getAttribute('data-id');
+                    document.getElementById('tutor-id').value = tutorId;
+                    document.getElementById('booking-form').style.display = 'block';
+                    
+                    // Scroll to booking form
+                    document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            // Cancel booking button
+            const cancelBookingBtn = document.getElementById('cancel-booking');
+            if (cancelBookingBtn) {
+                cancelBookingBtn.addEventListener('click', function() {
+                    document.getElementById('booking-form').style.display = 'none';
+                    document.getElementById('tutor-booking-form').reset();
+                });
+            }
+            
+            // Tutor booking form
+            const tutorBookingForm = document.getElementById('tutor-booking-form');
+            if (tutorBookingForm) {
+                tutorBookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const messageElement = document.getElementById('booking-message');
+                    messageElement.textContent = 'Tutoring session booked successfully!';
+                    messageElement.className = 'message success-message';
+                    
+                    // Hide form after successful booking
+                    setTimeout(() => {
+                        document.getElementById('booking-form').style.display = 'none';
+                        this.reset();
+                    }, 2000);
+                });
+            }
+        });
+        
+        // Show the specified section and hide others
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.dashboard-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+        
+        // Send message to AI Tutor
+        function sendAIMessage() {
+            const aiChatInput = document.getElementById('ai-chat-input');
+            const aiChatMessages = document.getElementById('ai-chat-messages');
+            const message = aiChatInput.value.trim();
+            
+            if (message) {
+                // Add user message
+                aiChatMessages.innerHTML += `
+                    <div class="message user-message">
+                        <div class="message-content">
+                            <p>${message}</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Clear input
+                aiChatInput.value = '';
+                
+                // Scroll to bottom of chat
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                
+                // Simulate AI thinking
+                setTimeout(() => {
+                    // Get AI response from the AI tutor module
+                    const aiResponse = generateAIResponse(message);
+                    
+                    aiChatMessages.innerHTML += `
+                        <div class="message ai-message">
+                            <div class="message-content">
+                                <p>${aiResponse}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Scroll to bottom of chat
+                    aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

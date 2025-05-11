@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/config.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/init.js" defer></script> <!-- Added init.js -->
+</head>
+<body>
+    <header class="page-header"> <!-- Added class -->
+        <h1>CampusConnect</h1>
+        <p>College Management System</p>
+    </header>
+    <div class="container">
+        <main>
+            <div class="login-container">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginRole">Role</label>
+                        <select id="loginRole" name="loginRole" required>
+                            <option value="">Select Role</option>
+                            <option value="student">Student</option>
+                            <option value="faculty">Faculty</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <div id="error-message" class="error-message"></div>
+                <p class="signup-link">Don't have an account? <a href="pages/signup.html">Sign up here</a></p>
+            </div>
+        </main>
+    </div>
+    <footer class="page-footer"> <!-- Added class -->
+        <p>&copy; 2023 CampusConnect. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // If user is already logged in, redirect them
+            const loggedInUser = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
+            if (loggedInUser) {
+                try {
+                    const user = JSON.parse(loggedInUser);
+                    if (user && user.role) {
+                        redirectToDashboard(user.role);
+                        return; // Stop further execution if redirected
+                    }
+                } catch (e) {
+                    console.error("Error parsing stored user data:", e);
+                    // Clear potentially corrupted data
+                    localStorage.removeItem('currentUser');
+                    sessionStorage.removeItem('currentUser');
+                }
+            }
+
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const roleFromForm = document.getElementById('loginRole').value;
+                const errorMessageElement = document.getElementById('error-message');
+                errorMessageElement.textContent = ''; // Clear previous errors
+
+                if (!username || !password || !roleFromForm) {
+                    errorMessageElement.textContent = 'Please fill in all fields.';
+                    return;
+                }
+                
+                try {
+                    const users = JSON.parse(localStorage.getItem('campus_users')) || [];
+                    const foundUser = users.find(user => 
+                        user.username === username && 
+                        user.password === password && // Plain text comparison (highly insecure)
+                        user.role === roleFromForm
+                    );
+
+                    if (foundUser) {
+                        const currentUser = {
+                            id: foundUser.id, // Added user ID
+                            username: foundUser.username,
+                            fullName: foundUser.fullName,
+                            email: foundUser.email,
+                            role: foundUser.role
+                        };
+                        // Store in localStorage for persistence across browser sessions,
+                        // or sessionStorage for session-only persistence.
+                        // For this example, let's use localStorage.
+                        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                        // Storing role separately might still be useful if other parts of the app expect it directly
+                        localStorage.setItem(CONFIG.STORAGE_KEYS.USER_ROLE, foundUser.role); 
+
+                        redirectToDashboard(foundUser.role);
+                    } else {
+                        errorMessageElement.textContent = 'Login failed. Please check your credentials and role.';
+                    }
+                } catch (error) {
+                    console.error('Login error:', error);
+                    errorMessageElement.textContent = 'An error occurred during login. Please try again.';
+                }
+            });
+        });
+
+        function redirectToDashboard(role) {
+            if (role === CONFIG.ROLES.STUDENT) {
+                window.location.href = 'pages/student.html';
+            } else if (role === CONFIG.ROLES.FACULTY) {
+                window.location.href = 'pages/faculty.html';
+            } else if (role === CONFIG.ROLES.ADMIN) {
+                window.location.href = 'pages/admin.html';
+            } else {
+                console.error('Unknown role:', role);
+                document.getElementById('error-message').textContent = 'Login successful, but role is unknown. Cannot redirect.';
+            }
+        }
+    </script>
+</body>
+</html>
