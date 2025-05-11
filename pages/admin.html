@@ -139,6 +139,14 @@
                                 <option value="admin">Admin</option>
                             </select>
                         </div>
+                        <div class="form-group student-fields" style="display: none;">
+                            <label for="user-department">Department</label>
+                            <input type="text" id="user-department" name="department">
+                        </div>
+                        <div class="form-group student-fields" style="display: none;">
+                            <label for="user-year">Year</label>
+                            <input type="text" id="user-year" name="year">
+                        </div>
                         <button type="submit" class="btn btn-primary">Add User</button>
                     </form>
                     <div id="user-message" class="message"></div>
@@ -522,6 +530,31 @@
             
             // Set admin name
             document.getElementById('admin-name').textContent = user.name || 'Admin';
+
+            // Logic to show/hide student-specific fields in Add User form
+            const userRoleSelect = document.getElementById('user-role');
+            const studentFields = document.querySelectorAll('.student-fields');
+
+            if (userRoleSelect) {
+                userRoleSelect.addEventListener('change', function() {
+                    if (this.value === 'student') {
+                        studentFields.forEach(field => field.style.display = 'block');
+                        // Make department and year required for students
+                        document.getElementById('user-department').required = true;
+                        document.getElementById('user-year').required = true;
+                    } else {
+                        studentFields.forEach(field => field.style.display = 'none');
+                        document.getElementById('user-department').required = false;
+                        document.getElementById('user-year').required = false;
+                    }
+                });
+                // Trigger change event on load in case a role is pre-selected (e.g. form remembers last state)
+                if(userRoleSelect.value === 'student'){
+                    studentFields.forEach(field => field.style.display = 'block');
+                    document.getElementById('user-department').required = true;
+                    document.getElementById('user-year').required = true;
+                }
+            }
             
             // Setup navigation
             document.getElementById('nav-dashboard').addEventListener('click', function(e) {
